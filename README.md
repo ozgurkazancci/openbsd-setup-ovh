@@ -211,13 +211,6 @@ The new GRUB configuration is generated in a temporary file, checked with `grub-
 - **UEFI boot path:** a separate VirtualBox EFI64 test reached the OpenBSD 7.9 installer through Debian GRUB EFI, OpenBSD's native EFI loader, and `boot esp:obsd79.rd`, without an ISO. This tested the boot chain, not the complete preparation script on every target OS or OVH UEFI firmware.
 - **Automated checks:** Bash syntax checks and 27 tests passed during development. Tests cover version/URL derivation, BIOS/UEFI menu generation, separate `/boot` paths, checksum parsing and corruption, download failures, file ownership, rollback, and storage checks. These use fixtures and mocks rather than rebooting a host.
 
-Run the local checks from the repository root:
-
-```bash
-bash -n openbsd-setup-ovh.sh
-bash tests/test-openbsd-setup-ovh.sh
-```
-
 I successfully tested the script on both Debian 11 and Ubuntu 26.04. You can achieve the same result on the other supported Debian and Ubuntu releases when the requirements above are met. The screenshots illustrate the console steps; they do not expand the validation scope.
 
 ---
